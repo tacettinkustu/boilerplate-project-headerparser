@@ -27,12 +27,11 @@ app.get('/api/hello', function (req, res) {
 
 // create a new endpoint for send response of IP...
 app.get('/api/whoami', function (req, res) {
-  res.send(req)
-  // res.json({
-  //   ipaddress: req.connection.remoteAddress,
-  //   language: req.headers['accept-language'],
-  //   software: req.headers['user-agent'],
-  // });
+  res.json({
+    ipaddress: req,
+    language: req.headers['accept-language'],
+    software: req.headers['user-agent'],
+  });
 });
 
 // listen for requests :)
