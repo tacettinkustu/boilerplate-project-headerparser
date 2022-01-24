@@ -28,7 +28,7 @@ app.get('/api/hello', function (req, res) {
 // create a new endpoint for send response of IP...
 app.get('/api/whoami', function (req, res) {
   res.json({
-    ipaddress: req,
+    ipaddress: req.connection.remoteAddress,
     language: req.headers['accept-language'],
     software: req.headers['user-agent'],
   });
